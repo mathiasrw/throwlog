@@ -30,7 +30,7 @@ function echoMsgBox(msg, colorFn, log) {
 function dump_(data, logTo) {
     if (logTo === void 0) { logTo = logErrorTo; }
     if (!/function|string|object/.test(typeof data)) {
-        data = data.toString();
+        data = '' + data;
     }
     logTo(chromafi(data, {
         indent: 2,

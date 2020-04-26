@@ -31,6 +31,10 @@ function echoMsgBox(msg, colorFn, log = logOutputTo) {
 }
 
 export function dump_(data, logTo = logErrorTo) {
+	if(!/function|string|object/.test(typeof data)){
+		data = data.toString();
+	}
+
 	logTo(
 		chromafi(data, {
 			indent: 2,
